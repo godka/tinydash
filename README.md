@@ -33,9 +33,11 @@ Hit CTRL-C to stop the server
 
 安装python过程略，现在看来似乎是必备工具。
 在项目目录下使用该命令开启服务。
-···
+
+```python
 python -m SimpleHTTPServer 8080
-···
+```
+
 默认开启在8080端口，随后即可使用浏览器访问。
 
 **start.sh开启的服务器默认使用https协议**
@@ -84,15 +86,18 @@ function getMaxIndex(rulesContext) {
 }
 ```
 
-witchRequest如下所示
+其中，SwitchRequest如下所示
 
 ```js
 SwitchRequest(context).create(quality, next_rule, priority);
 ```
 
 where,
+
 quality:选中的下一个切片index，simplerule例子中恒为第一个切片
+
 next_rule:下一次使用的规则class，可以多个rule一起交叉使用
+
 priority:此次调整的优先级，从weak到strong，有多个等级。
 
 ## Licensing and distribution ##
