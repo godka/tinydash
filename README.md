@@ -1,9 +1,8 @@
 # tinydash使用说明 #
 
 tinydash是基于dash.js实现的dash client testbed，用户可以通过添加简单的脚本自定义码率调整策略。所有策略规则都在app/rules/文件夹中，默认有download ratio，kalman filter两个策略规则。
-可以通过浏览
-[https://1029.mythkast.net/tinydash/]
-获取更多信息。
+
+可以通过浏览[https://1029.mythkast.net/tinydash/]获取更多信息。
 
 ## 运行 ##
 
