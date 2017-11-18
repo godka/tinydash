@@ -201,7 +201,7 @@ app.controller('DashController', function ($scope, sources, contributors, dashif
     $scope.scheduleWhilePausedSelected = true;
     $scope.localStorageSelected = true;
     $scope.fastSwitchSelected = true;
-    $scope.customABRRulesSelected = false;
+    $scope.customABRRulesSelected = true;
     //$scope.toggleUseCustomABRRules();
     //$scope.ABRStrategy = "abrDynamic";
     ////////////////////////////////////////
@@ -513,11 +513,13 @@ app.controller('DashController', function ($scope, sources, contributors, dashif
             console.log('on custonABR');
             $scope.player.useDefaultABRRules(false);
             $scope.player.addABRCustomRule('qualitySwitchRules', 'SimpleRule', SimpleRule);
+            //$scope.player.addABRCustomRule('qualitySwitchRules', 'KalmanRule', KalmanRule);
             //$scope.player.addABRCustomRule('qualitySwitchRules', 'DownloadRatioRule', DownloadRatioRule);
             //$scope.player.addABRCustomRule('qualitySwitchRules', 'ThroughputRule', CustomThroughputRule);
         } else {
             $scope.player.useDefaultABRRules(true);
-            $scope.player.addABRCustomRule('qualitySwitchRules', 'SimpleRule', SimpleRule);
+            $scope.player.removeABRCustomRule('SimpleRule');
+            //$scope.player.removeABRCustomRule('KalmanRule');
             //$scope.player.removeABRCustomRule('DownloadRatioRule');
             //$scope.player.removeABRCustomRule('ThroughputRule');
         }
@@ -547,7 +549,22 @@ app.controller('DashController', function ($scope, sources, contributors, dashif
     $scope.doLoad = function () {
 
         $scope.initSession();
-
+        if ($scope.customABRRulesSelected) {
+            console.log('on custonABR');
+            $scope.player.useDefaultABRRules(false);
+            $scope.player.addABRCustomRule('qualitySwitchRules', 'SimpleRule', SimpleRule);
+            /*
+            $scope.player.addABRCustomRule('qualitySwitchRules', 'KalmanRule', KalmanRule);
+            $scope.player.addABRCustomRule('qualitySwitchRules', 'DownloadRatioRule', DownloadRatioRule);
+            */
+        } else {
+            $scope.player.useDefaultABRRules(true);
+            $scope.player.removeABRCustomRule('SimpleRule');
+            /*
+            $scope.player.removeABRCustomRule('KalmanRule');
+            $scope.player.removeABRCustomRule('DownloadRatioRule');
+            */
+        }
         var protData = {};
         if ($scope.selectedItem.hasOwnProperty("protData")) {
             protData = $scope.selectedItem.protData;
