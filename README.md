@@ -110,7 +110,7 @@ priority:此次调整的优先级，从weak到strong，有多个等级。
 
 2.akamai并没有提供音频包
 
-于是我制作了一个patch.zip，你们在解压缩完片源后，再解压patch进行覆盖。
+于是我制作了[patch.zip](https://raw.githubusercontent.com/godka/tinydash/master/patch.zip)，你们在解压缩完片源后，再解压patch进行覆盖。
 
 最后你们需运行拥有https和Access-Control-Allow-Origin头的http服务器。
 
