@@ -12,9 +12,9 @@ function KalmanRuleClass() {
     let MetricsModel = factory.getSingletonFactoryByName('MetricsModel');
     let DashManifestModel = factory.getSingletonFactoryByName('DashManifestModel');
     let StreamController = factory.getSingletonFactoryByName('StreamController');
-
+    
     let context = this.context;
-
+    var debadebade = 0.0;
     var rate = 0.02;
     var pnoise = 10;
     var mnoise = 3;
@@ -62,6 +62,9 @@ function KalmanRuleClass() {
         }
         return { q: q, p: p };
     }
+    function inital(){
+
+    }
     function getMaxIndex(rulesContext) {
         // here you can get some informations aboit metrics for example, to implement the rule
         let metricsModel = MetricsModel(context).getInstance();
@@ -70,8 +73,7 @@ function KalmanRuleClass() {
         var mediaType = rulesContext.getMediaInfo().type;
         var metrics = metricsModel.getReadOnlyMetricsFor(mediaType);
         var requests = dashMetrics.getHttpRequests(metrics);
-
-
+        _kalman = new asdasdasd(rulesContext)
         var lastRequest = null;
         var currentRequest = null;
 

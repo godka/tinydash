@@ -102,6 +102,19 @@ next_rule:下一次使用的规则class，可以多个rule一起交叉使用
 
 priority:此次调整的优先级，从weak到strong，有多个等级。
 
+## DASH 测试服务器搭建 ##
+
+我们默认使用bbb片源进行测试。首先在[akamai](https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.zip)下载dash的实例片源。akamai提供的压缩包中存在几个问题：
+
+1.akamai提供的mpd写错了，m4a写成了m4v
+
+2.akamai并没有提供音频包
+
+于是我制作了一个patch.zip，你们在解压缩完片源后，再解压patch进行覆盖。
+
+最后你们需运行拥有https和Access-Control-Allow-Origin头的http服务器。
+
+
 ## Licensing and distribution ##
 
 Licensed under the Apache License, Version 2.0 (the "License");
